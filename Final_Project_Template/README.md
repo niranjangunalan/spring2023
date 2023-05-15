@@ -50,7 +50,6 @@ YouTube Video:  [Link](http://your_link_goes_here)
 ---
 
 ## Explanation of the Code
-*In this section you should provide a more detailed explanation of what, exactly, your Python script(s) actually do.  Your classmates should be able to read your explanation and understand what is happening in the code.*
 
 The code, `needs_a_good_name.py`, begins by importing necessary Python packages:
 ```
@@ -70,10 +69,13 @@ for i in range(0,len(x)):
 - *NOTE 1:  This sample code doesn't actually import anything.  You'll need your code to grab live data from an online source.*  
 - *NOTE 2:  You will probably also need to clean/filter/re-structure the raw data.  Be sure to include that step.*
 
-Finally, we visualize the data.  We save our plot as a `.png` image:
+Finally, we perform exploratory data analysis to visualize the data.  We save our plots as a `.png` image:
 ```
-plt.plot(x, y)
-plt.savefig('samplefigure.png')	
+plt.plot(data_last_5_years.index, data_last_5_years["close"])
+plt.title("AAPL Closing Prices over Time (Last 5 Years)", fontsize=12)
+plt.xlabel("Date", fontsize=12, rotation=0)
+plt.ylabel("Closing Price", fontsize=12, rotation=90)
+plt.xticks(fontsize=8, rotation=-90)
 plt.show()
 ```
 
